@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+.mainWrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.listPart {
+    display: inline-block;
+    width: 200px;
+    height: 100%;
+    padding-right: 5px;
+    background-color: #f6f6f6;
+}
+
+.list-header {
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.list-title {
+    line-height: 30px;
+    padding-top: 3px;
+    font-size: 20px;
+}
+
+.button_create__icon::before {
+    content: "\f067";
+    font: normal normal normal 14px/1 FontAwesome;
+}
+
+.listPart__elements {
+    padding-top: 10px;
+    overflow-y: auto;
+}
+
+.documentElement.modified .documentElement__title::after {
+    padding-left: 0.5em;
+    font-size: x-small;
+    vertical-align: super;
+    color: #f0ad4e;
+    content: "\f069"; /* fa-asterisk */
+    font: normal normal normal 8px/1 FontAwesome;
+}
+
+.contentPart {
+    float: right;
+    width: calc(100% - 200px);
+    height: 100%;
+    padding-left: 5px;
+}
+
+.documentWrapper {
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<module xmlns="urn:dynacase:webinst:module/1.0" name="@moduleName@" release="@release@" version="@version@">
+    <description>Base tutorial for discovering Dynacase Document UIs</description>
+
+    <requires>
+        <module comp="ge" name="dynacase-core" version="3.2"/>
+        <module comp="ge" name="dynacase-document-uis" version="1.0"/>
+    </requires>
+
+    <post-install>
+        <process command="programs/record_application SIMPLE_LIST"/>
+        <process command="./wsh.php --api=setApplicationParameter --appname=SIMPLE_LIST --param=SEARCH_NAME --value=DDUI_TUTO_CONTACT__SEARCH_SIMPLE_LIST"/>
+        <process command="./wsh.php --app=DOCUMENT --action=LOAD_RENDERPARAMETERS"/>
+
+        <process command="programs/record_application DDUI_TUTO"/>
+        <process command='./wsh.php --api=importDocuments --file=DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv --csv-separator=&apos;;&apos; --csv-enclosure=&apos;&quot;&apos;'/>
+        <process command='./wsh.php --api=importDocuments --file=DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__WFL.csv --csv-separator=&apos;;&apos; --csv-enclosure=&apos;"&apos;'/>
+        <process command='./wsh.php --api=importDocuments --file=DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__DATA.csv --csv-separator=&apos;;&apos; --csv-enclosure=&apos;"&apos;'/>
+        <process command='./wsh.php --api=importDocuments --file=DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__PARAM.csv --csv-separator=&apos;;&apos; --csv-enclosure=&apos;&quot;&apos;'/>
+        <process command='./wsh.php --api=importDocuments --file=DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__INITDATA.xml'/>
+
+        <process command="programs/update_catalog"/>
+    </post-install>
+    <post-upgrade>
+        <process command="programs/pre_migration SIMPLE_LIST"/>
+        <process command="programs/record_application SIMPLE_LIST"/>
+        <process command="programs/post_migration SIMPLE_LIST"/>
+        <process command="./wsh.php --app=DOCUMENT --action=LOAD_RENDERPARAMETERS"/>
+
+        <process command="programs/pre_migration DDUI_TUTO"/>
+        <process command="programs/record_application DDUI_TUTO"/>
+        <process command='./wsh.php --api=importDocuments --file=DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv --csv-separator=&apos;;&apos; --csv-enclosure=&apos;&quot;&apos;'/>
+        <process command='./wsh.php --api=importDocuments --file=DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__WFL.csv --csv-separator=&apos;;&apos; --csv-enclosure=&apos;"&apos;'/>
+        <process command='./wsh.php --api=importDocuments --file=DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__DATA.csv --csv-separator=&apos;;&apos; --csv-enclosure=&apos;"&apos;'/>
+        <process command='./wsh.php --api=importDocuments --file=DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__PARAM.csv --csv-separator=&apos;;&apos; --csv-enclosure=&apos;&quot;&apos;'/>
+        <process command='./wsh.php --api=importDocuments --file=DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__INITDATA.xml'/>
+        <process command="programs/post_migration DDUI_TUTO"/>
+
+        <process command="programs/update_catalog"/>
+    </post-upgrade>
+</module>

@@ -1,0 +1,146 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DDUI_TUTO_CONTACT_en\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain;  charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_civility"
+msgstr "Civilité"
+
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_civility#Miss"
+msgstr "Madame"
+
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_civility#Mister"
+msgstr "Monsieur"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_firstname"
+msgstr "Prénom"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_fr_coord"
+msgstr "Coordonnées professionnelles"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_fr_homeaddr"
+msgstr "Adresse personnelle"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_fr_ident"
+msgstr "Identité"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_fr_society"
+msgstr "Société"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_fr_workaddr"
+msgstr "Adresse professionnelle"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_homecity"
+msgstr "Ville"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_homepostalcode"
+msgstr "Code postal"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_homestreet"
+msgstr "Rue"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_lastname"
+msgstr "Nom"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_logo"
+msgstr "Logo société"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_mobilephone"
+msgstr "Mobile"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_photo"
+msgstr "Photographie"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_role"
+msgstr "Poste occupé"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_service"
+msgstr "Service"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_society"
+msgstr "Société"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_tab_homeinfo"
+msgstr "Personnel"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_tab_workinfo"
+msgstr "Professionnel"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_workcity"
+msgstr "Ville"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_workmail"
+msgstr "Courriel"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_workphone"
+msgstr "Téléphone"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_workpostalcode"
+msgstr "Code postal"
+
+#: DDUI_TUTO/Families/DDUI_TUTO_CONTACT/DDUI_TUTO_CONTACT__STRUCT.csv
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#dc_workstreet"
+msgstr "Rue"
+
+#, fuzzy
+msgid "DDUI_TUTO_CONTACT#title"
+msgstr ""
+"#-#-#-#-#  DDUI_TUTO_CONTACT.pot (DDUI_TUTO_CONTACT )  #-#-#-#-#\n"
+"Contact\n"
+"#-#-#-#-#  DDUI_TUTO_CONTACT.pot (DDUI_TUTO_CONTACT )  #-#-#-#-#\n"

@@ -1,0 +1,13 @@
+//FAM;dossier(DIR);<specid>;<fldid>;titre;
+ORDER;DIR;;;ba_title;
+DOC;DIR;DDUI_TUTO_CONTACT_DIR;;DDUI_TUTO_CONTACT_DIR;
+;;;;;
+//;Father;Title;Id;Classe;Logical Name
+BEGIN;;Contact;;;DDUI_TUTO_CONTACT
+ICON;ddui_tuto_contact.png;;;;
+DFLDID;DDUI_TUTO_CONTACT_DIR;;;;
+WID;DDUI_TUTO_CONTACT__WDOC;;;;
+;;;;;
+DEFAULT;dc_fr_createur;::getUserId();;;
+;;;;;
+END;;;;;
