@@ -1,0 +1,120 @@
+<div class="container dc__main">
+    <div class="well clearfix">
+        <div class="dc__summary">
+            <div class="media">
+                <div class="media-left media-middle">
+                    <img src="{{document.attributes.dc_photo.attributeValue.url}}&width=150" alt="Pas de photo de contact">
+                </div>
+
+                <div class="media-body">
+                    <div class="media">
+                        <div class="media-body">
+                            <h1 class="media-heading pull-right">{{document.attributes.dc_society.attributeValue.displayValue}}</h1>
+                        </div>
+                        <div class="media-right media-middle">
+                            <img src="{{{document.attributes.dc_logo.attributeValue.thumbnail}}}" alt="pas de logo de la société">
+                        </div>
+                    </div>
+                    {{{document.attributes.dc_civility.attributeValue.displayValue}}}
+                    <h2 class="media-heading">
+                        {{{document.attributes.dc_firstname.attributeValue.displayValue}}}
+                        {{{document.attributes.dc_lastname.attributeValue.displayValue}}}
+                    </h2>
+
+                    {{{document.attributes.dc_service.attributeValue.displayValue}}}&nbsp;({{{document.attributes.dc_role.attributeValue.displayValue}}})
+                </div>
+            </div>
+        </div>
+        <div id="qrcontainer" class="dc__qrCode"></div>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingMore">
+            <h3 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" href="#collapseMore"
+                   aria-expanded="true" aria-controls="collapseOne">
+                    <i class="collapseMore__icon fa" /> En savoir plus
+                </a>
+            </h3>
+        </div>
+        <div id="collapseMore" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMore">
+            <div class="panel-body">
+                <div class="row dc__coord">
+                    <div class="col-sm-4">
+                        <i class="fa fa-phone"></i> {{{document.attributes.dc_workphone.htmlContent}}}
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-mobile"></i> {{{document.attributes.dc_mobilephone.htmlContent}}}
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-envelope"></i> {{{document.attributes.dc_workmail.htmlContent}}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 ">
+                        {{{document.attributes.dc_fr_workaddr.htmlView}}}
+                    </div>
+                    <div class="col-sm-6 ">
+                        {{{document.attributes.dc_fr_homeaddr.htmlView}}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var qr = new JSQR();
+
+    var code = new qr.Code();
+    code.encodeMode = code.ENCODE_MODE.BYTE;
+    code.version = code.DEFAULT;
+    code.errorCorrection = code.ERROR_CORRECTION.M;
+
+    var input = new qr.Input();
+    input.dataType = input.DATA_TYPE.VCARD;
+    input.data = {
+        "version": "3.0",
+        "type": "person",
+        "firstName": "{{{document.attributes.dc_firstname.attributeValue.value}}}",
+        "middleName": "",
+        "lastName": "{{{document.attributes.dc_lastname.attributeValue.value}}}",
+        "organization": "{{{document.attributes.dc_society.attributeValue.value}}}",
+        "title": "{{{document.attributes.dc_role.attributeValue.value}}}",
+        "home": {
+            "street": "{{{document.attributes.dc_workstreet.attributeValue.value}}}",
+            "city": "{{{document.attributes.dc_workcity.attributeValue.value}}}",
+            "zip": "{{{document.attributes.dc_workpostalcode.attributeValue.value}}}",
+            "country": "France",
+            "state": "",
+            "phone": "",
+            "eMail": "",
+            "url": ""
+        },
+        "work": {
+            "eMail": "{{{document.attributes.dc_workmail.attributeValue.value}}}",
+            "phone": "{{{document.attributes.dc_workphone.attributeValue.value}}}",
+            "street": "{{{document.attributes.dc_homestreet.attributeValue.value}}}",
+            "city": "{{{document.attributes.dc_homecity.attributeValue.value}}}",
+            "zip": "{{{document.attributes.dc_homepostalcode.attributeValue.value}}}",
+            "country": "France",
+            "state": "",
+            "fax": "",
+            "url": ""
+        },
+        "mobilePhone": "{{{document.attributes.dc_mobilephone.attributeValue.value}}}",
+        "birthday": null
+    };
+
+    var matrix = new qr.Matrix(input, code);
+    matrix.margin = 0;
+    matrix.scale = 3;
+
+    var canvas = document.createElement('canvas');
+    canvas.setAttribute('width', matrix.pixelWidth);
+    canvas.setAttribute('height', matrix.pixelWidth);
+    canvas.getContext('2d').fillStyle = 'rgb(0,0,0)';
+    matrix.draw(canvas, 0, 0);
+    document.getElementById('qrcontainer').appendChild(canvas);
+</script>

@@ -1,93 +1,81 @@
-/******************************************************************************
- cadre identité
-******************************************************************************/
 
-/* masquage du label de la photo */
-.dcpAttribute__label[data-attrid="dc_photo"]{
-    display: none;
-}
-.dcpAttribute__label[data-attrid="dc_photo"]::after {
-    content: none;
+
+.dc__main {
+    font-size: 16px;
+    padding-top: 20px;
 }
 
-@media (min-width: 480px) {
-
-    /* Positionnement de la photo à gauche */
-    .dcpAttribute[data-attrid="dc_photo"] {
-        float: left;
-        width: 66px;
-    }
-
-    .dcpAttribute__content[data-attrid="dc_photo"] {
-        padding: 0;
-    }
-
-    /* Restauration de la position initiale de tous les attributs autres que la photo */
-    .dcpFrame__content[data-attrid=dc_fr_ident] .dcpAttribute:not([data-attrid="dc_photo"]) {
-        float: right;
-        width: calc(100% - 66px);
-    }
-
-    .dcpFrame__content[data-attrid=dc_fr_ident] label:not([data-attrid="dc_photo"]) {
-        width: calc((100% / 3) - 44px);
-    }
+.dc__coord {
+    text-align: center;
 }
 
-/******************************************************************************
- cadre Société
-******************************************************************************/
-
-@media (max-width: 1024px),
-       (min-width: 1280px) {
-
-    /* masquage du label du logo */
-    .dcpAttribute__label[data-attrid="dc_logo"]{
-        display: none;
-    }
-    .dcpAttribute__label[data-attrid="dc_logo"]::after {
-        content: none;
-    }
+.dc__coord .dcpCustomTemplate--content {
+    display: inline-block;
 }
 
-@media (min-width:480px) and (max-width:1024px),
-       (min-width: 1280px) {
-
-    /* Positionnement du logo à gauche */
-    .dcpAttribute[data-attrid="dc_logo"] {
-        float: left;
-        width: 66px;
-    }
-
-    .dcpAttribute__content[data-attrid="dc_logo"] {
-        padding: 0;
-    }
-
-    /* Restauration de la position initiale de tous les attributs autres que le logo */
-    .dcpFrame__content[data-attrid=dc_fr_society] .dcpAttribute:not([data-attrid="dc_logo"]) {
-        float: right;
-        width: calc(100% - 66px);
-    }
-
-    .dcpFrame__content[data-attrid=dc_fr_society] label:not([data-attrid="dc_logo"]) {
-        width: calc((100% / 3) - 44px);
-    }
+.dc__coord .fa {
+    font-size: 150%;
+    vertical-align: top;
+    padding-top: 0.2em;
+    width: 2em;
+    text-align: center;
 }
 
-/******************************************************************************
- Positionnement côte à côte des cadres "Société" et "Coordonnées professionnelles"
-******************************************************************************/
-@media (min-width: 1024px) {
-    .dcpFrame[data-attrid=dc_fr_society],
-    .dcpFrame[data-attrid=dc_fr_coord] {
-        float: right;
-        width: calc(50% - 10px);
-    }
+.dcpAttribute[data-attrid="dc_workpostalcode"],
+.dcpAttribute[data-attrid="dc_workcity"],
+.dcpAttribute[data-attrid="dc_homepostalcode"],
+.dcpAttribute[data-attrid="dc_homecity"] {
+    float: left;
+    display: inline-block;
+    margin-right: 2px;
+}
 
-    .dcpFrame[data-attrid=dc_fr_society] {
+
+.dcpAttribute__content[data-attrid="dc_workpostalcode"],
+.dcpAttribute__content[data-attrid="dc_workcity"],
+.dcpAttribute__content[data-attrid="dc_homepostalcode"],
+.dcpAttribute__content[data-attrid="dc_homecity"] {
+    width: auto;
+}
+
+.dcpAttribute__label {
+    display:none;
+}
+
+.panel-heading[data-attrid="dc_fr_workaddr"],
+.panel-heading[data-attrid="dc_fr_homeaddr"] {
+    font-size: 14px;
+}
+
+.collapseMore__icon::before {
+    content: "\f0da"; /* fa-caret-right */
+}
+
+a:not(.collapsed) .collapseMore__icon::before {
+    content: "\f0d7"; /* fa-caret-down */
+}
+
+.panel-title a:hover {
+    text-decoration: none;
+}
+
+.dc__qrCode {
+    margin-top: 10px;
+    text-align: center;
+}
+
+@media (min-width:768px) {
+    .dc__summary,
+    .dc__qrCode {
         float: left;
     }
-
-    .dcpFrame[data-attrid=dc_fr_coord] {
-        float: right;
+    .dc__summary {
+        width: calc(100% - 210px);
+        padding-right: 10px;
+    }
+    .dc__qrCode {
+        width: 210px;
+        text-align: right;
+        margin-top: 0;
     }
 }
