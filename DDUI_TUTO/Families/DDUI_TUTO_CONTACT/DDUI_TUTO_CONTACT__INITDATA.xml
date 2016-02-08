@@ -44,4 +44,45 @@
         </dc_tab_workinfo>
 
     </ddui_tuto_contact>
+    <ddui_tuto_contact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                       xsi:noNamespaceSchemaLocation="ddui_tuto_contact.xsd" name="CONTACT_THOMAS_ANDERSON"
+                       title="Thomas Anderson" revision="0" modification-date="2016-04-29T11:41:19" version=""
+                       state="ctc_e1">
+        <dc_tab_homeinfo>
+            <dc_fr_homeaddr>
+                <dc_homestreet xsi:nil="true"/>
+                <dc_homepostalcode xsi:nil="true"/>
+                <dc_homecity xsi:nil="true"/>
+            </dc_fr_homeaddr>
+        </dc_tab_homeinfo>
+        <dc_fr_ident>
+            <dc_photo mime="" title="" xsi:nil="true"/>
+            <dc_civility xsi:nil="true"/>
+            <dc_firstname>Thomas</dc_firstname>
+            <dc_lastname>Anderson</dc_lastname>
+        </dc_fr_ident>
+        <dc_fr_system>
+            <dc_fr_createur name="USER_ADMIN">Master Dynacase Platform</dc_fr_createur>
+            <dc_fr_relecteur xsi:nil="true"/>
+        </dc_fr_system>
+        <dc_tab_workinfo>
+            <dc_fr_coord>
+                <dc_workphone xsi:nil="true"/>
+                <dc_mobilephone xsi:nil="true"/>
+                <dc_workmail xsi:nil="true"/>
+            </dc_fr_coord>
+            <dc_fr_workaddr>
+                <dc_workstreet xsi:nil="true"/>
+                <dc_workpostalcode xsi:nil="true"/>
+                <dc_workcity xsi:nil="true"/>
+            </dc_fr_workaddr>
+            <dc_fr_society>
+                <dc_logo mime="" title="" xsi:nil="true"/>
+                <dc_society xsi:nil="true"/>
+                <dc_service xsi:nil="true"/>
+                <dc_role xsi:nil="true"/>
+            </dc_fr_society>
+        </dc_tab_workinfo>
+
+    </ddui_tuto_contact>
 </documents>

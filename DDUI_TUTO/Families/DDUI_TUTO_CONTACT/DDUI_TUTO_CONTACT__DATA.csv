@@ -217,7 +217,37 @@ N";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 //FAM;Contrôle de rendu(CVDOC);<specid>;<fldid>;titre;description;family id;famille;Identifiant de la vue;Label;Type;Zone (Layout);Classe de configuration de rendu;Masque;Masque(titre);Ordre de sélection;Affichable;Menu;id création vues par défaut;Famille pour le profil;création vue;Famille pour le profil (titre);Classe d'accès au rendu;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ORDER;CVDOC;;;ba_title;cv_desc;cv_famid;cv_fam;cv_idview;cv_lview;cv_kview;cv_zview;cv_renderconfigclass;cv_mskid;cv_msk;cv_order;cv_displayed;cv_menu;cv_idcview;dpdoc_famid;cv_lcview;dpdoc_fam;cv_renderaccessclass;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-DOC;CVDOC;DDUI_TUTO_CONTACT__CVDOC;;Contact (Contrôle de rendu);;DDUI_TUTO_CONTACT;Contact;DEFAULT_VIEW;Consultation;VCONS;	;\DduiTuto\ContactRenderConfigView;	;	;10;no;	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DOC;CVDOC;DDUI_TUTO_CONTACT__CVDOC;;Contact (Contrôle de rendu);;DDUI_TUTO_CONTACT;Contact;"DEFAULT_VIEW
+WIZARD_IDENT
+WIZARD_WORKINFO
+WIZARD_HOMEINFO";"Consultation
+Identité
+Professionnel
+Personnel";"VCONS
+VEDIT
+VEDIT
+VEDIT";"
+
+
+";"\DduiTuto\ContactRenderConfigView
+\DduiTuto\ContactWizardRenderConfigEdit
+\DduiTuto\ContactWizardRenderConfigEdit
+\DduiTuto\ContactWizardRenderConfigEdit";"
+DDUI_TUTO_CONTACT__MASK__WIZARD_IDENT
+DDUI_TUTO_CONTACT__MASK__WIZARD_WORKINFO
+DDUI_TUTO_CONTACT__MASK__WIZARD_HOMEINFO";"
+Contact (masque WIZARD_IDENT) Contact
+Contact (masque WIZARD_WORKINFO) Contact
+Contact (masque WIZARD_HOMEINFO) Contact";"10
+10
+20
+30";"no
+no
+no
+no";"
+
+
+";;;;;\DduiTuto\ContactCVDOCRenderConfigAccess;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 //FAM;profil de document(PDOC);<specid>;<fldid>;titre;description;family id;famille;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ORDER;PDOC;;;ba_title;prf_desc;dpdoc_famid;dpdoc_fam;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
