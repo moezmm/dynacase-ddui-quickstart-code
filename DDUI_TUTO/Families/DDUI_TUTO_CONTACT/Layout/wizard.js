@@ -97,7 +97,26 @@
                             });
                             break;
                         case 'wizard.end':
-                            //TODO
+                            this.documentController(
+                                "saveDocument",
+                                {
+                                    customClientData: {
+                                        currentWizardStepName: currentWizardStepName
+                                    }
+                                }
+                            ).then(function wizardEnd_changeState() {
+                                window.dcp.document.documentController(
+                                    "changeStateDocument",
+                                    {
+                                        "nextState": "ctc_e2",
+                                        "transition": "ctc_t_e1__e2"
+                                    },
+                                    {
+                                        viewId: '!defaultConsultation',
+                                        revision: -1
+                                    }
+                                );
+                            });
                             break;
                         default:
                             return;
