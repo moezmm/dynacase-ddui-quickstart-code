@@ -105,7 +105,56 @@
                     event.preventDefault();
                 }
             );
-            
+
+            // react to custom:wizardgotostep events from a click on a step
+            this.documentController(
+                "addEventListener",
+                "custom:wizardgotostep",
+                {
+                    "name": "gotoStep.wizard.contact",
+                    "documentCheck": function gotoStepWizardContactDocumentCheck(documentObject)
+                    {
+                        return documentObject.family.name === "DDUI_TUTO_CONTACT" &&
+                            documentObject.renderMode === "edit";
+                    }
+                },
+                function gotoStepWizardContact(event, targetStep)
+                {
+                    var customServerData = this.documentController("getCustomServerData"),
+                        currentWizardStepName = null;
+
+                    // do not let the browser follow the link
+                    event.preventDefault();
+
+                    if (customServerData && customServerData.wizardInfos && customServerData.wizardInfos.currentStep) {
+                        currentWizardStepName = customServerData.wizardInfos.currentStep.cv_idview;
+                    }
+
+                    // reload document from server
+                    // add customClientData indicating the target step
+                    this.documentController(
+                        "reinitDocument",
+                        {
+                            customClientData: {
+                                goto: 'wizard.targetStep',
+                                currentWizardStepName: currentWizardStepName,
+                                targetStep: targetStep
+                            }
+                        }
+                    );
+                }
+            );
+
+            // trigger a custom:wizardgotostep when the user click on a step
+            $('.wizard_summary').on('click', '.wizard_summary__step', function stepLabelClick()
+            {
+                window.dcp.document.documentController(
+                    "triggerEvent",
+                    "custom:wizardgotostep",
+                    $(this).data('viewid')
+                );
+            });
+
             // update the header summary according to attributes values
             updateSummaryStatus();
         }
