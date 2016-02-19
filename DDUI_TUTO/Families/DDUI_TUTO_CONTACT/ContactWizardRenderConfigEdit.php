@@ -9,6 +9,17 @@ class ContactWizardRenderConfigEdit extends \Dcp\Ui\DefaultEdit
 {
     use TContactWizardRenderConfigEdit;
 
+    public function getCustomServerData(\Doc $document)
+    {
+        $this->initWizardInfos($document);
+
+        $customServerData = parent::getCustomServerData($document);
+
+        $customServerData["wizardInfos"] = $this->wizardInfos;
+
+        return $customServerData;
+    }
+
     public function getContextController(\Doc $document)
     {
         $this->initWizardInfos($document);
