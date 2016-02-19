@@ -1,0 +1,80 @@
+.wizard_summary__step {
+    float: left;
+    padding: 2px 0px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.wizard_summary__step::before {
+    content: "\f054"; /* fa-chevron-right */
+    font-size: 2em;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    float: right;
+    vertical-align: middle;
+    width: 30px;
+    text-align: center;
+    color: green;
+}
+
+.wizard_summary__step:first-child {
+    padding-left: 5px;
+}
+
+.wizard_summary__step:last-child {
+    padding-right: 5px;
+}
+
+.wizard_summary__step:last-child::before {
+    content: "\f024"; /* fa-flag */
+}
+
+.wizard_summary__step_optional_unfilled::before {
+    color: orange;
+}
+
+.wizard_summary__step_required_unfilled::before {
+    color: red;
+}
+
+.wizard_summary__step:hover,
+.wizard_summary__step:active {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.wizard_summary__step_current {
+    background-color: WhiteSmoke;
+}
+
+.wizard_summary__step__label {
+    font-weight: bold;
+    font-size: 120%;
+    padding: 3px;
+}
+
+.wizard_summary__step__label_current {
+    font-style: italic;
+}
+
+.wizard_summary__step__attributes {
+    width: calc(100% - 30px);
+    float: left;
+}
+
+.wizard_summary__step__attribute {
+    height: 3px;
+    background-clip: content-box;
+    float: left;
+    padding: 0 2px;
+    background-color: orange;
+}
+
+.wizard_summary__step__attribute_required {
+    background-color: red;
+}
+
+.wizard_summary__step__attribute_filled {
+    background-color: green;
+}
