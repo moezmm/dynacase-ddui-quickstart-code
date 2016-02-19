@@ -4,6 +4,7 @@ namespace DduiTuto;
 
 use Dcp\Ui\IRenderConfig;
 use Dcp\Ui\IRenderConfigAccess;
+use Dcp\Ui\RenderConfigManager;
 
 class ContactCvdocRenderConfigAccess implements IRenderConfigAccess
 {
@@ -15,6 +16,14 @@ class ContactCvdocRenderConfigAccess implements IRenderConfigAccess
      */
     public function getRenderConfig($mode, \Doc $document)
     {
-        // TODO: Implement getRenderConfig() method.
+        switch($mode) {
+        case RenderConfigManager::ViewMode:
+            //let the CV RENDER do the job
+            return null;
+        default:
+            $wizardRenderConfig = new ContactWizardRenderConfigEdit();
+            $wizardRenderConfig->initWizardInfos($document);
+            return $wizardRenderConfig;
+        }
     }
 }
