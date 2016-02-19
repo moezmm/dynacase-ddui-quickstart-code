@@ -27,6 +27,13 @@ class ContactWizardRenderConfigEdit extends \Dcp\Ui\DefaultEdit
         $templates["sections"]["menu"]["file"]
             = "DDUI_TUTO/Families/DDUI_TUTO_CONTACT/Layout/contactWizardHeader.mustache";
 
+        $contentTemplate = "";
+        foreach($this->wizardInfos['currentStep']['attributes']['frames'] as $frame) {
+            $contentTemplate .= "{{{document.attributes." . $frame['attrid'] . ".htmlView}}}";
+        }
+
+        $templates["sections"]["content"]["content"] = $contentTemplate;
+
         return $templates;
     }
 
@@ -104,5 +111,11 @@ class ContactWizardRenderConfigEdit extends \Dcp\Ui\DefaultEdit
         $menu->appendElement($item);
 
         return $menu;
+    }
+
+    public function getVisibilities(\Doc $document)
+    {
+        $this->initWizardInfos($document);
+        return parent::getVisibilities($document);
     }
 }
