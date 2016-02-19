@@ -63,6 +63,21 @@ class ContactWizardRenderConfigEdit extends \Dcp\Ui\DefaultEdit
         return $cssReferences;
     }
 
+    public function getJsReferences(\Doc $document = null)
+    {
+        $version = \ApplicationParameterManager::getParameterValue(
+            "CORE", "WVERSION"
+        );
+
+        $jsReferences = parent::getJsReferences($document);
+
+        $jsReferences['DDUI_TUTO_CONTACT_WIZARD']
+            = "DDUI_TUTO/Families/DDUI_TUTO_CONTACT/Layout/wizard.js?ws="
+            . $version;
+
+        return $jsReferences;
+    }
+
     public function getMenu(\Doc $document)
     {
         $this->initWizardInfos($document);
