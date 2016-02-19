@@ -145,6 +145,33 @@
                 }
             );
 
+            // react to change events (when an attribute value is updated)
+            this.documentController(
+                "addEventListener",
+                "change",
+                {
+                    "name": "change.wizard.contact",
+                    "documentCheck": function changeWizardContactDocumentCheck(documentObject)
+                    {
+                        return documentObject.family.name === "DDUI_TUTO_CONTACT" &&
+                            documentObject.renderMode === "edit";
+                    }
+                },
+                function changeWizardContact(event, documentObject, attributeObject, values)
+                {
+                    // find the summary field corresponding to this attribute
+                    $('.wizard_summary__step__attribute[data-attrid=' + attributeObject.id + ']')
+                        .toggleClass(
+                            // add the class "filled" if the value is not empty
+                            'wizard_summary__step__attribute_filled',
+                            values.current.value !== ''
+                        );
+
+                    // update the header summary according to new attributes values
+                    updateSummaryStatus();
+                }
+            );
+
             // trigger a custom:wizardgotostep when the user click on a step
             $('.wizard_summary').on('click', '.wizard_summary__step', function stepLabelClick()
             {
