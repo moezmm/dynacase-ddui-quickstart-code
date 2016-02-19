@@ -46,4 +46,32 @@ class ContactRenderConfigView extends \Dcp\Ui\DefaultView
 
         return $cssReferences;
     }
+
+    public function getMenu(\Doc $document)
+    {
+        $menu = parent::getMenu($document);
+
+        $modifLabel = ___("Modify", "UiMenu");
+
+        // get wizard informations stored on the document
+        $wizardTags = $document->getUTag('wizard');
+        if (false === $wizardTags) {
+            $wizardTags = [];
+        } else {
+            $wizardTags = json_decode($wizardTags->comment, true);
+        }
+        // append the name of the last displayed step to the label
+        if (isset($wizardTags['currentWizardStepName'])) {
+            $modifLabel .= " (" . $wizardTags['currentWizardStepLabel'] . ")";
+        }
+
+        // get the "modify" button
+        $modifMenu = $menu->getElement("modify");
+        // update its label
+        if (!is_null($modifMenu)) {
+            $modifMenu->setTextLabel($modifLabel);
+        }
+
+        return $menu;
+    }
 }
