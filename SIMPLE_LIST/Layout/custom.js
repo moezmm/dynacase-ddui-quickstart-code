@@ -32,6 +32,19 @@
                     $window.trigger('documentOpened', $documentWrapper.document("getProperties"));
                 }
             );
+
+            // propagate that this document has changed
+            $documentWrapper.document(
+                "addEventListener",
+                "change",
+                {
+                    "name": "change.simple_list"
+                },
+                function simpleList_propagateChange(event, documentObject)
+                {
+                    $window.trigger('documentChanged', documentObject);
+                }
+            );
         };
 
     $window.on('documentElementClicked', function onDocumentElementClicked(event, options)
