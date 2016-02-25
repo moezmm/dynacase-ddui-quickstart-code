@@ -64,6 +64,19 @@
                     }
                 }
             );
+            
+            // propagate that this document has been deleted
+            $documentWrapper.document(
+                "addEventListener",
+                "afterDelete",
+                {
+                    "name": "afterDelete.simple_list"
+                },
+                function simpleList_propagateAfterDelete(event, documentObject)
+                {
+                    $window.trigger('documentDeleted', documentObject);
+                }
+            );
         };
 
     $window.on('documentElementClicked', function onDocumentElementClicked(event, options)
