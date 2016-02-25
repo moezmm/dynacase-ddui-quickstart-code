@@ -64,7 +64,7 @@
                     }
                 }
             );
-            
+
             // propagate that this document has been deleted
             $documentWrapper.document(
                 "addEventListener",
@@ -75,6 +75,19 @@
                 function simpleList_propagateAfterDelete(event, documentObject)
                 {
                     $window.trigger('documentDeleted', documentObject);
+                }
+            );
+
+            // propagate that this document has been restored
+            $documentWrapper.document(
+                "addEventListener",
+                "afterRestore",
+                {
+                    "name": "afterRestore.simple_list"
+                },
+                function simpleList_propagateAfterRestore(event, documentObject)
+                {
+                    $window.trigger('documentRestored', documentObject);
                 }
             );
         };
