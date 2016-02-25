@@ -67,4 +67,13 @@
             "viewId": "!defaultConsultation"
         });
     });
+
+    $window.on('buttonCreateClicked', function onButtonCreateClicked(event, options)
+    {
+        var fetchOptions = {
+            "initid": options.famid,
+            "viewId": "!defaultCreation"
+        };
+        loadDocument(fetchOptions);
+    });
 })($, _);
