@@ -45,6 +45,19 @@
                     $window.trigger('documentChanged', documentObject);
                 }
             );
+
+            // propagate that this document has been saved
+            $documentWrapper.document(
+                "addEventListener",
+                "afterSave",
+                {
+                    "name": "afterSave.simple_list"
+                },
+                function simpleList_propagateAfterSave(event, documentObject)
+                {
+                    $window.trigger('documentSaved', documentObject);
+                }
+            );
         };
 
     $window.on('documentElementClicked', function onDocumentElementClicked(event, options)
