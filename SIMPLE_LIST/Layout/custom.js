@@ -53,9 +53,15 @@
                 {
                     "name": "afterSave.simple_list"
                 },
-                function simpleList_propagateAfterSave(event, documentObject)
+                function simpleList_propagateAfterSave(event, currentDocumentObject, previousDocumentObject)
                 {
-                    $window.trigger('documentSaved', documentObject);
+                    if(previousDocumentObject.initid === 0) {
+                        // if previous document had no initid, it is a creation
+                        $window.trigger('documentCreated', currentDocumentObject);
+                    } else {
+                        // otherwise, it is a simple save
+                        $window.trigger('documentSaved', currentDocumentObject);
+                    }
                 }
             );
         };
